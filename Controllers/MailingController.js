@@ -10,12 +10,14 @@ const transporter = nodemailer.createTransport({
     },
 });
 
+
 // Adresse e-mail statique en copie
-const ccEmail = "yelmouss.gmc@gmail.com";
+const ccEmail = "dickobenjmohamed@gmail.com";
 
 
 exports.sendEmail = async (req, res) => {
     try {
+        // console.log(process.env.EMAIL)
         const { to, subject, html } = req.body;
 
         // Message personnalisé avec HTML
@@ -27,10 +29,7 @@ exports.sendEmail = async (req, res) => {
             <p style="color: #C9D6DF;">Nous avons bien reçu votre message :</p>
             <p style="margin-bottom: 20px;color: #C9D6DF"><strong>${html}</strong></p>
             <p style="color: #C9D6DF;">Merci de nous avoir contactés!</p>
-            <a href="https://yelmouss.vercel.app" style="text-decoration: none; color: #C9D6DF;">
-                <img src="https://yelmouss.vercel.app/static/media/Geek.f6f97d62b3ed6895e2b9.png" alt="Logo" style="display: block; margin: 0 auto; max-width: 80px; height: auto; margin-top: 20px;">
-                <p>Visit Portfolio</p>
-            </a>
+        
         </div>
     
     </body>
